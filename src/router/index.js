@@ -6,7 +6,7 @@ import Login from '@/components/Login';
 import Products from '@/components/Products';
 import Cart from '@/components/Cart';
 import MyOrders from '@/components/MyOrders';
-import OrderDetails from '@/components/MyOrders';
+import OrderDetails from '@/components/OrderDetail';
 Vue.use(Router);
 
 export default new Router({
@@ -36,7 +36,7 @@ export default new Router({
       component : MyOrders
     },
     {
-      path : '/order/:orderid',
+      path : '/order-detail/:orderid',
       name : "OrderDetails",
       component : OrderDetails
     },
