@@ -1,8 +1,10 @@
 import router from '../router';
 import VueResource from "vue-resource"
 import Vue from 'vue';
+import config from '../../config';
 // URL and endpoint constants
-const API_URL = 'http://localhost:3001/api/'
+// const API_URL = 'http://localhost:3001/api/';
+const API_URL = config.build.api_url;
 const PRODUCT_URL = API_URL + 'products/';
 const SIGNUP_URL = API_URL + 'users/'
 Vue.use(VueResource);

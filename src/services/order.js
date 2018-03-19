@@ -2,7 +2,8 @@ import router from '../router';
 import VueResource from "vue-resource"
 import Vue from 'vue';
 // URL and endpoint constants
-const API_URL = 'http://localhost:3001/api/'
+// const API_URL = 'http://localhost:3001/api/'
+const API_URL = config.build.api_url;
 const GET_CART = 'cart';
 const PLACE_ORDER = API_URL + 'place-order';
 const LIST_ORDERS = API_URL + 'orders/';
@@ -10,6 +11,7 @@ const ORDER_DETAILS = API_URL + 'order/';
 Vue.use(VueResource);
 
 import auth from '../auth';
+import config from '../../config';
 export default {
   name : 'OrderService',
   // Send a request to the login URL and save the returned JWT

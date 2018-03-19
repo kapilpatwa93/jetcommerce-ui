@@ -6,7 +6,7 @@
       <div class="row">
         <div v-for="product in products" class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
           <div class="my-list">
-            <div class="product-image-con"><img class="product-image" :src="'http://localhost:3001/'+product.image1" alt="product.name"/></div>
+            <div class="product-image-con"><img class="product-image" :src="PRODUCT_URL+product.image1" alt="product.name"/></div>
             <div class="product-name">{{product.name}}</div>
             <div class="price">MRP : {{product.price}} INR</div>
 
@@ -17,7 +17,7 @@
             <div class="detail">
               <p>{{product.description}} </p>
               <div class="product-image-con">
-                <img class="product-image" :src="'http://localhost:3001/'+product.image1" alt="product.name"/>
+                <img class="product-image" :src="PRODUCT_URL+product.image1" alt="product.name"/>
               </div>
               <div v-if="product.available_quantity > 0">
                 <input :disabled="product.available_quantity <=0" class="quantity-input" type="number" min="0"
@@ -42,16 +42,19 @@
   import CartService from '../services/cart';
   import About from "./About.vue";
   import Navbar from "./navbar.vue";
-  import swal from 'sweetalert2'
+  import swal from 'sweetalert2';
+  import config from '../../config';
   export default {
     components: {
       Navbar,
       About
     },
+
     name: 'Products',
     data() {
       return {
-        products: []
+        products: [],
+        PRODUCT_URL : config.build.product_url
       }
     },
     methods: {
